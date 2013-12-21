@@ -1,7 +1,5 @@
 <?php
 
-namespace PHPImageWorkshop\Exception;
-
 /**
  * ImageWorkshopBaseException
  * 
