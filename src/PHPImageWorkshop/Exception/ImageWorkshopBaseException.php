@@ -10,7 +10,7 @@
  * @license http://en.wikipedia.org/wiki/MIT_License
  * @copyright Clément Guillemain
  */
-class ImageWorkshopBaseException extends \Exception
+class ImageWorkshopBaseException extends Exception
 {
     /**
      * Constructor
@@ -19,7 +19,7 @@ class ImageWorkshopBaseException extends \Exception
      * @param integer $code
      * @param Exception $previous
      */
-    public function __construct($message, $code = 0, \Exception $previous = null)
+    public function __construct($message, $code = 0, Exception $previous = null)
     {
         parent::__construct($message, $code, $previous);
     }
