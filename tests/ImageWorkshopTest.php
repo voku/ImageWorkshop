@@ -1,8 +1,6 @@
 <?php
 
-use PHPImageWorkshop\ImageWorkshop as ImageWorkshop;
-
-require_once(__DIR__.'/autoload.php');
+require_once(dirname(__FILE__) . '/autoload.php');
 
 /**
  * ImageWorkshopTest class
@@ -15,7 +13,7 @@ require_once(__DIR__.'/autoload.php');
  * @copyright Clément Guillemain
  * 
  */
-class ImageWorkshopTest extends \PHPUnit_Framework_TestCase
+class ImageWorkshopTest extends PHPUnit_Framework_TestCase
 {
     // Properties
     // ===================================================================================
@@ -33,7 +31,7 @@ class ImageWorkshopTest extends \PHPUnit_Framework_TestCase
     {
         // test 1
         
-        $layer = ImageWorkshop::initFromPath(__DIR__.static::IMAGE_SAMPLE_PATH);
+        $layer = ImageWorkshop::initFromPath(dirname(__FILE__) . self::IMAGE_SAMPLE_PATH);
         
         $this->assertTrue(is_object($layer) === true, 'Expect $layer to be an object');
         $this->assertTrue(get_class($layer) === 'PHPImageWorkshop\Core\ImageWorkshopLayer', 'Expect $layer to be an ImageWorkshopLayer object');
@@ -49,7 +47,7 @@ class ImageWorkshopTest extends \PHPUnit_Framework_TestCase
      */
     public function testInitTextLayer()
     {
-        $layer = ImageWorkshop::initTextLayer('Hello John Doe !', __DIR__.static::FONT_SAMPLE_PATH, 15, 'ff0000', 10, 'ffffff');
+        $layer = ImageWorkshop::initTextLayer('Hello John Doe !', dirname(__FILE__) . self::FONT_SAMPLE_PATH, 15, 'ff0000', 10, 'ffffff');
         
         $this->assertTrue(is_object($layer) === true, 'Expect $layer to be an object');
         $this->assertTrue(get_class($layer) === 'PHPImageWorkshop\Core\ImageWorkshopLayer', 'Expect $layer to be an ImageWorkshopLayer object');
@@ -71,7 +69,7 @@ class ImageWorkshopTest extends \PHPUnit_Framework_TestCase
      */
     public function testInitFromResourceVar()
     {
-        $layer = ImageWorkshop::initFromResourceVar(imageCreateFromJPEG(__DIR__.static::IMAGE_SAMPLE_PATH));
+        $layer = ImageWorkshop::initFromResourceVar(imageCreateFromJPEG(dirname(__FILE__) . self::IMAGE_SAMPLE_PATH));
         
         $this->assertTrue(is_object($layer) === true, 'Expect $layer to be an object');
         $this->assertTrue(get_class($layer) === 'PHPImageWorkshop\Core\ImageWorkshopLayer', 'Expect $layer to be an ImageWorkshopLayer object');
@@ -82,7 +80,7 @@ class ImageWorkshopTest extends \PHPUnit_Framework_TestCase
      */
     public function testInitFromString()
     {
-        $layer = ImageWorkshop::initFromString(file_get_contents(__DIR__.static::IMAGE_SAMPLE_PATH));
+        $layer = ImageWorkshop::initFromString(file_get_contents(dirname(__FILE__) . self::IMAGE_SAMPLE_PATH));
         
         $this->assertTrue(is_object($layer) === true, 'Expect $layer to be an object');
         $this->assertTrue(get_class($layer) === 'PHPImageWorkshop\Core\ImageWorkshopLayer', 'Expect $layer to be an ImageWorkshopLayer object');

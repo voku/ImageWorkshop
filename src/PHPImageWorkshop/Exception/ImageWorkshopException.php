@@ -1,7 +1,7 @@
 <?php
 
 // If no autoloader, uncomment these lines:
-require_once(__DIR__.'/ImageWorkshopBaseException.php');
+require_once(dirname(__FILE__) . '/ImageWorkshopBaseException.php');
 
 /**
  * ImageWorkshopException

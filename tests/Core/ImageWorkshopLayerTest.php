@@ -1,8 +1,6 @@
 <?php
 
-use PHPImageWorkshop\ImageWorkshop as ImageWorkshop;
-
-require_once(__DIR__.'/../autoload.php');
+require_once(dirname(__FILE__) . '/../autoload.php');
  
 /**
  * ImageWorkshopLayerTest class
@@ -15,7 +13,7 @@ require_once(__DIR__.'/../autoload.php');
  * @copyright Clément Guillemain
  * 
  */
-class ImageWorkshopLayerTest extends \PHPUnit_Framework_TestCase
+class ImageWorkshopLayerTest extends PHPUnit_Framework_TestCase
 {
     // Tests
     // ===================================================================================

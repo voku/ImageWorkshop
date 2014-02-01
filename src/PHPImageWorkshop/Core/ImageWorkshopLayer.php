@@ -1,9 +1,9 @@
 <?php
 
 // If no autoloader, uncomment these lines:
-require_once(__DIR__.'/../ImageWorkshop.php');
-require_once(__DIR__.'/ImageWorkshopLib.php');
-require_once(__DIR__.'/Exception/ImageWorkshopLayerException.php');
+require_once(dirname(__FILE__) . '/../ImageWorkshop.php');
+require_once(dirname(__FILE__) . '/ImageWorkshopLib.php');
+require_once(dirname(__FILE__) . '/Exception/ImageWorkshopLayerException.php');
 
 /**
  * ImageWorkshopLayer class
@@ -1366,7 +1366,7 @@ class ImageWorkshopLayer
      *
      * $imageQuality is useless for GIF
      *
-     * Ex: $folder = __DIR__."/../web/images/2012"
+     * Ex: $folder = dirname(__FILE__) . "/../web/images/2012"
      *     $imageName = "butterfly.jpg"
      *     $createFolders = true
      *     $imageQuality = 95

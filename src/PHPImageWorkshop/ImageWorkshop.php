@@ -1,12 +1,8 @@
 <?php
 
-if (!defined('__DIR__')) {
-  define('__DIR__', dirname(__FILE__));
-}
-
 // If no autoloader, uncomment these lines:
-require_once(__DIR__.'/Core/ImageWorkshopLayer.php');
-require_once(__DIR__.'/Exception/ImageWorkshopException.php');
+require_once(dirname(__FILE__) . '/Core/ImageWorkshopLayer.php');
+require_once(dirname(__FILE__) . '/Exception/ImageWorkshopException.php');
 
 /**
  * ImageWorkshop class
