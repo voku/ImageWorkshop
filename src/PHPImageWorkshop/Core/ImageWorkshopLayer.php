@@ -965,7 +965,7 @@ class ImageWorkshopLayer
     public function crop($unit = self::UNIT_PIXEL, $width = 0, $height = 0, $positionX = 0, $positionY = 0, $position = 'LT')
     {
         if ($width < 0 || $height < 0) {
-            throw new ImageWorkshopLayerException('You can\'t use negative $width or $height for "'.__METHOD__.'" method.', static::ERROR_NEGATIVE_NUMBER_USED);
+            throw new ImageWorkshopLayerException('You can\'t use negative $width or $height for "'.__METHOD__.'" method.', self::ERROR_NEGATIVE_NUMBER_USED);
         }
         
         if ($unit == self::UNIT_PERCENT) {
@@ -1763,7 +1763,7 @@ class ImageWorkshopLayer
      */
     public function resizeInPourcent($percentWidth = null, $percentHeight = null, $converseProportion = false, $positionX = 0, $positionY = 0, $position = 'MM')
     {
-		throw new ImageWorkshopLayerException('Method resizeInPourcent() was renamed resizeInPercent(). Use resizeInPercent() instead.', static::METHOD_DEPRECATED);
+		throw new ImageWorkshopLayerException('Method resizeInPourcent() was renamed resizeInPercent(). Use resizeInPercent() instead.', self::METHOD_DEPRECATED);
     }
 	
 	/**
@@ -1771,7 +1771,7 @@ class ImageWorkshopLayer
      */
     public function resizeByLargestSideInPourcent($newLargestSideWidth, $converseProportion = false)
     {
-        throw new ImageWorkshopLayerException('Method resizeByLargestSideInPourcent() was renamed resizeByLargestSideInPercent(). Use resizeByLargestSideInPercent() instead.', static::METHOD_DEPRECATED);
+        throw new ImageWorkshopLayerException('Method resizeByLargestSideInPourcent() was renamed resizeByLargestSideInPercent(). Use resizeByLargestSideInPercent() instead.', self::METHOD_DEPRECATED);
     }
 	
 	/**
@@ -1779,7 +1779,7 @@ class ImageWorkshopLayer
      */
     public function resizeByNarrowSideInPourcent($newNarrowSideWidth, $converseProportion = false)
     {
-        throw new ImageWorkshopLayerException('Method resizeByNarrowSideInPourcent() was renamed resizeByNarrowSideInPercent(). Use resizeByNarrowSideInPercent() instead.', static::METHOD_DEPRECATED);
+        throw new ImageWorkshopLayerException('Method resizeByNarrowSideInPourcent() was renamed resizeByNarrowSideInPercent(). Use resizeByNarrowSideInPercent() instead.', self::METHOD_DEPRECATED);
     }
 	
 	/**
@@ -1787,7 +1787,7 @@ class ImageWorkshopLayer
      */
     public function cropInPourcent($percentWidth = 0, $percentHeight = 0, $positionXPercent = 0, $positionYPercent = 0, $position = 'LT')
     {
-		throw new ImageWorkshopLayerException('Method cropInPourcent() was renamed cropInPercent(). Use cropInPercent() instead.', static::METHOD_DEPRECATED);
+		throw new ImageWorkshopLayerException('Method cropInPourcent() was renamed cropInPercent(). Use cropInPercent() instead.', self::METHOD_DEPRECATED);
 	}
 	
 	/**
@@ -1795,6 +1795,6 @@ class ImageWorkshopLayer
      */
     public function cropMaximumInPourcent($positionXPercent = 0, $positionYPercent = 0, $position = 'LT')
     {
-        throw new ImageWorkshopLayerException('Method cropMaximumInPourcent() was renamed cropMaximumInPercent(). Use cropMaximumInPercent() instead.', static::METHOD_DEPRECATED);
+        throw new ImageWorkshopLayerException('Method cropMaximumInPourcent() was renamed cropMaximumInPercent(). Use cropMaximumInPercent() instead.', self::METHOD_DEPRECATED);
     }
 }

@@ -55,14 +55,14 @@ class ImageWorkshop
         if (file_exists($path) && !is_dir($path)) {
             
             if (!is_readable($path)) {
-                throw new ImageWorkshopException('Can\'t open the file at "'.$path.'" : file is not writable, did you check permissions (755 / 777) ?', static::ERROR_NOT_WRITABLE_FILE);
+                throw new ImageWorkshopException('Can\'t open the file at "'.$path.'" : file is not writable, did you check permissions (755 / 777) ?', self::ERROR_NOT_WRITABLE_FILE);
             }
             
             $imageSizeInfos = @getImageSize($path);
             $mimeContentType = explode('/', $imageSizeInfos['mime']);
             
             if (!$mimeContentType || !array_key_exists(1, $mimeContentType)) {
-                throw new ImageWorkshopException('Not an image file (jpeg/png/gif) at "'.$path.'"', static::ERROR_NOT_AN_IMAGE_FILE);
+                throw new ImageWorkshopException('Not an image file (jpeg/png/gif) at "'.$path.'"', self::ERROR_NOT_AN_IMAGE_FILE);
             }
             
             $mimeContentType = $mimeContentType[1];
@@ -81,14 +81,14 @@ class ImageWorkshop
                 break;
 
                 default:
-                    throw new ImageWorkshopException('Not an image file (jpeg/png/gif) at "'.$path.'"', static::ERROR_NOT_AN_IMAGE_FILE);
+                    throw new ImageWorkshopException('Not an image file (jpeg/png/gif) at "'.$path.'"', self::ERROR_NOT_AN_IMAGE_FILE);
                 break;
             }
             
             return new ImageWorkshopLayer($image);
         }
         
-        throw new ImageWorkshopException('No such file found at "'.$path.'"', static::ERROR_IMAGE_NOT_FOUND);
+        throw new ImageWorkshopException('No such file found at "'.$path.'"', self::ERROR_IMAGE_NOT_FOUND);
     }
     
     /**
@@ -107,7 +107,7 @@ class ImageWorkshop
     {
         $textDimensions = ImageWorkshopLib::getTextBoxDimension($fontSize, $textRotation, $fontPath, $text);
 
-        $layer = static::initVirginLayer($textDimensions['width'], $textDimensions['height'], $backgroundColor);
+        $layer = self::initVirginLayer($textDimensions['width'], $textDimensions['height'], $backgroundColor);
         $layer->write($text, $fontPath, $fontSize, $fontColor, $textDimensions['left'], $textDimensions['top'], $textRotation);
         
         return $layer;
@@ -158,7 +158,7 @@ class ImageWorkshop
     public static function initFromString($imageString)
     {
         if (!$image = @imageCreateFromString($imageString)) {
-            throw new ImageWorkshopException('Can\'t generate an image from the given string.', static::ERROR_CREATE_IMAGE_FROM_STRING);
+            throw new ImageWorkshopException('Can\'t generate an image from the given string.', self::ERROR_CREATE_IMAGE_FROM_STRING);
         }
         
         return new ImageWorkshopLayer($image);

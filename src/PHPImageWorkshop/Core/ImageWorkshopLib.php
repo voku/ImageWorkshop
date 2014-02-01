@@ -132,7 +132,7 @@ class ImageWorkshopLib
     public static function getTextBoxDimension($fontSize, $fontAngle, $fontFile, $text)
     {
         if (!file_exists($fontFile)) {
-            throw new ImageWorkshopLibException('Can\'t find a font file at this path : "'.$fontFile.'".', static::ERROR_FONT_NOT_FOUND);
+            throw new ImageWorkshopLibException('Can\'t find a font file at this path : "'.$fontFile.'".', self::ERROR_FONT_NOT_FOUND);
         }
         
         $box = imagettfbbox($fontSize, $fontAngle, $fontFile, $text);
