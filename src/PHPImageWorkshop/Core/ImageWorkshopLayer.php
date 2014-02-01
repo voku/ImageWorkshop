@@ -129,11 +129,11 @@ class ImageWorkshopLayer
     public function __construct($image)
     {
         if (!extension_loaded('gd')) {
-            throw new ImageWorkshopLayerException('PHPImageWorkshop requires the GD extension to be loaded.', static::ERROR_GD_NOT_INSTALLED);
+            throw new ImageWorkshopLayerException('PHPImageWorkshop requires the GD extension to be loaded.', self::ERROR_GD_NOT_INSTALLED);
         }
     	
         if (gettype($image) != 'resource' && gettype($image) != '\resource') {
-            throw new ImageWorkshopLayerException('You must give a php image var to initialize a layer.', static::ERROR_PHP_IMAGE_VAR_NOT_USED);
+            throw new ImageWorkshopLayerException('You must give a php image var to initialize a layer.', self::ERROR_PHP_IMAGE_VAR_NOT_USED);
         }
 
         $this->width = imagesx($image);
@@ -1292,7 +1292,7 @@ class ImageWorkshopLayer
     public function write($text, $fontPath, $fontSize = 13, $color = 'ffffff', $positionX = 0, $positionY = 0, $fontRotation = 0)
     {
         if (!file_exists($fontPath)) {
-            throw new ImageWorkshopLayerException('Can\'t find a font file at this path : "'.$fontPath.'".', static::ERROR_FONT_NOT_FOUND);
+            throw new ImageWorkshopLayerException('Can\'t find a font file at this path : "'.$fontPath.'".', self::ERROR_FONT_NOT_FOUND);
         }
         
         $RGBTextColor = ImageWorkshopLib::convertHexToRGB($color);
